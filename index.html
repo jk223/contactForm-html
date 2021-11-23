@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" type="text/css" href="style.css">
+</head>
+
+<body>
+    <Form action="results.html" method="=" GET">
+        <h1>Contact us</h1>
+        <div>
+            <div class="input-container">
+                <input type="email" name="email" placeholder="Email" required />
+            </div>
+            <div class="input-container">
+                <input type="password" name="password" placeholder="Password" minlength="8" required />
+            </div>
+            <div>
+                <label for="color">Color</label>
+                <select name="color" id="color">
+                    <!-- To enable, multiple selection, use `multiple` -->
+                    <option value="Blue">Blue</option>
+                    <option value="Green">Green</option>
+                    <option value="Red">Red</option>
+                    <option value="Black">Black</option>
+                    <option value="Brown">Brown</option>
+                </select>
+            </div>
+            <div>
+                <h2>Animal</h2>
+                <div>
+                    <label for="bear">Bear</label>
+                    <input name="bear" type="checkbox" id="bear" onclick="ShoworHideTextArea()" />
+                </div>
+                <div>
+                    <label for="tiger">Tiger</label>
+                    <input name="tiger" type="checkbox" id="tiger" onclick="ShoworHideTextArea()" />
+                </div>
+                <div>
+                    <label for="snake">Snake</label>
+                    <input name="snake" type="checkbox" id="snake" onclick="ShoworHideTextArea()" />
+                </div>
+                <div>
+                    <label for="donkey">Donkey</label>
+                    <input name="donkey" type="checkbox" id="donkey" onclick="ShoworHideTextArea()" />
+                </div>
+            </div>
+
+            <div class="tigerType" id="tigerType" name="tigerType" required>
+                <label for name="tigerType">Type of tiger</label>
+                <textArea name="tigerType"></textArea>
+            </div>
+        </div>
+        <button type="reset">Reset</button>
+        <button type="submit">Submit</button>
+    </form>
+    <script type="text/javascript">
+        // toggling
+        function ShoworHideTextArea() {
+
+            var tiger = document.getElementById("tiger");
+            var tigerType = document.getElementById("tigerType");
+            if (tiger.checked == true) {
+                tigerType.style.display = "block";
+            }
+            else {
+                tigerType.style.display = "none";
+            }
+        }
+    </script>
+</body>
+
+</html>
